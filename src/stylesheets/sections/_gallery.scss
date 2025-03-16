@@ -1,0 +1,13 @@
+@use '../custom'as *;
+.gallery {
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+    i{
+        color: $tertiary;
+    }
+    border-style: dashed;
+    border-radius: 5px;
+    border-color: $fourth;
+}

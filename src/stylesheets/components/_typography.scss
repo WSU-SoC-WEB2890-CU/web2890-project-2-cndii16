@@ -1,0 +1,24 @@
+@use '../custom'as *;
+
+
+h1, nav{
+    font-family: 'Lilita One', cursive, sans-serif;
+    color: $secondary;
+}
+h2, .card-title {
+   font-family: 'Madimi One', sans-serif;
+    color:$secondary;
+}
+h5{
+    font-family: 'Madimi One', sans-serif;
+}
+
+p{
+    color: $primary;
+}
+.coloroverride{
+    color:$secondary;
+    &--option2{
+        color:$tertiary;
+    }
+}
