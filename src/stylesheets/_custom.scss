@@ -1,0 +1,19 @@
+$primary: #6a7361;
+$secondary: #383d34;
+$tertiary: #FADA7A;
+$fourth: #F0A04B;
+
+.emphasis {
+    border-style: solid;
+    border-width: 2px; 
+    border-color: $secondary;
+}
+
+.btn{
+    background-color: $tertiary;
+    color:$secondary;
+}
+
+
+@import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap-icons/font/bootstrap-icons.scss";
