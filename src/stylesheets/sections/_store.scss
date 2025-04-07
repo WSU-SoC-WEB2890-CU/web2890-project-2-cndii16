@@ -1,0 +1,51 @@
+@use '../custom'as *;
+
+.disclaimer{
+    background-image: url('../images/vine.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    i{
+        color: $tertiary;
+    }
+}
+.store{
+    background-image: url('../images/vine.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 800px;
+        margin: auto;
+    }
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+}

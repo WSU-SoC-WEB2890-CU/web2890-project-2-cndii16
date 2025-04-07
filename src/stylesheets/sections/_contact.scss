@@ -1,0 +1,25 @@
+@use '../custom'as *;
+
+.background{
+    background-image: url('../images/vine.svg')!important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.form {
+   
+    padding: 20px; 
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    i{
+        color:$fourth;
+    }
+    
+}
+@media (max-width: 767px) {
+    .form{
+        width: 100%;
+    }
+}

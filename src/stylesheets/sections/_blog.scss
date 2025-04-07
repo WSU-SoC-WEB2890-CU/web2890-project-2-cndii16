@@ -1,0 +1,37 @@
+@use '../custom' as *;
+
+.blog {
+  background-image: url('../images/vine.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .card {
+    width: 80%; 
+    max-width: 400px; 
+    height: auto;  
+    margin: 0 auto;  
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+  }
+
+  .col-12, .col-md-8 {
+    display: flex;
+    justify-content: center;  
+  }
+  i{
+    color: $tertiary;
+  }
+  .blog-scroll-wrapper {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .card-wrapper {
+    flex: 0 0 300px;
+  }
+}

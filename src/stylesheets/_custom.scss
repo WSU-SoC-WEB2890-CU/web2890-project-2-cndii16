@@ -1,0 +1,26 @@
+$primary: #6a7361;
+$secondary: #383d34;
+$tertiary: #FADA7A;
+$fourth: #F0A04B;
+
+.emphasis {
+    border-style: solid;
+    border-width: 2px; 
+    border-color: $secondary;
+}
+
+.btn{
+    background-color: $tertiary;
+    color:$secondary;
+}
+.background{
+    background-image: url('../images/vine.svg')!important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+@import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap-icons/font/bootstrap-icons.scss";

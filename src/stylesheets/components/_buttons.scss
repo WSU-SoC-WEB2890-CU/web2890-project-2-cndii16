@@ -1,0 +1,10 @@
+@use '../custom'as *;
+
+.btn-tertiary{
+    background-color: $tertiary !important;
+    color: $secondary !important;
+    &:hover{
+        background-color:$secondary !important;
+        color:$tertiary !important;
+    }
+}
