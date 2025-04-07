@@ -2,20 +2,25 @@
 
 .navbar{
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to left, #ffedb8 20%, #FADA7A);
+    background: linear-gradient(to right, #6a7361 20%, #383d34);
     .nav-item{
         padding: 10px;
     }
     .nav-link{
-        color: $primary;
+        color: $tertiary;
         &:hover{
             color: $secondary;
         }
     }
     .active{
-        color: $secondary;
+        color: $fourth;
     }
     button{
-        background-color: $secondary;
+        background-color: $tertiary;
+    }
+    .navbar-brand{
+        &:hover{
+            color: $tertiary;
+        }
     }
 }

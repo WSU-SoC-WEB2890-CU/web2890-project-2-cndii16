@@ -13,6 +13,13 @@ $fourth: #F0A04B;
     background-color: $tertiary;
     color:$secondary;
 }
+.background{
+    background-image: url('../images/vine.svg')!important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 
 @import "bootstrap/scss/bootstrap.scss";

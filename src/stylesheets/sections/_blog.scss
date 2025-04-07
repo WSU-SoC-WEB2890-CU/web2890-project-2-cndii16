@@ -1,6 +1,11 @@
 @use '../custom' as *;
 
 .blog {
+  background-image: url('../images/vine.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   .card {
     width: 80%; 
     max-width: 400px; 
@@ -20,5 +25,13 @@
   }
   i{
     color: $tertiary;
+  }
+  .blog-scroll-wrapper {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .card-wrapper {
+    flex: 0 0 300px;
   }
 }

@@ -1,5 +1,10 @@
 @use '../custom'as *;
 .gallery {
+    background-image: url('../images/vine.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     img{
         width: 100%;
         object-fit: cover;
@@ -11,3 +16,24 @@
     border-radius: 5px;
     border-color: $fourth;
 }
+.scroll-container {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+  

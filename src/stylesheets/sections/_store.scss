@@ -1,14 +1,21 @@
 @use '../custom'as *;
 
 .disclaimer{
+    background-image: url('../images/vine.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     i{
         color: $tertiary;
     }
 }
-.store-comission{
-
-}
 .store{
+    background-image: url('../images/vine.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     .gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

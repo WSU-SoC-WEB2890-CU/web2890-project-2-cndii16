@@ -45,3 +45,37 @@ document.addEventListener("DOMContentLoaded", function() {
         post.innerHTML += `, ${daysAgo} days ago`;
     });
 });
+
+document.getElementById('sortSelect').addEventListener('change', function () {
+    const posts = Array.from(document.querySelectorAll('.card-wrapper'));
+    const container = posts[0]?.parentNode;
+    const isNewest = this.value === 'newest';
+  
+    posts.sort((a, b) => {
+      const dateA = new Date(a.querySelector('[data-date]').dataset.date);
+      const dateB = new Date(b.querySelector('[data-date]').dataset.date);
+      return isNewest ? dateB - dateA : dateA - dateB;
+    });
+  
+    posts.forEach(post => container.appendChild(post));
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const sortSelect = document.getElementById("sortSelect");
+    const cardContainer = document.querySelector(".blog-scroll-wrapper .d-flex");
+
+    function sortCards(order = "newest") {
+      const cards = Array.from(cardContainer.querySelectorAll(".card-wrapper"));
+
+      cards.sort((a, b) => {
+        const dateA = new Date(a.querySelector("[data-date]").dataset.date);
+        const dateB = new Date(b.querySelector("[data-date]").dataset.date);
+        return order === "newest" ? dateB - dateA : dateA - dateB;
+      });
+
+      cards.forEach(card => cardContainer.appendChild(card));
+    }
+    sortCards("newest");
+    sortSelect.addEventListener("change", (e) => {
+      sortCards(e.target.value);
+    });
+  });
