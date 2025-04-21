@@ -18,14 +18,8 @@ p{
 }
 .coloroverride{
     color:$secondary;
-    :hover{
-        color: $tertiary;
-    }
     &--option2{
         color:$tertiary;
-        :hover{
-            color: $secondary;
-        }
     }
 }
 .emphasis {
