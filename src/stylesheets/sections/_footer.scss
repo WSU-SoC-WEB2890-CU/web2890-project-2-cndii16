@@ -1,0 +1,12 @@
+@use '../custom'as *;
+
+footer{
+    background: linear-gradient(to right, #ffedb8 20%, #FADA7A);
+    color: $secondary;
+    i{
+        color: $secondary;
+        :hover{
+            color:$fourth;
+        }
+    }
+}

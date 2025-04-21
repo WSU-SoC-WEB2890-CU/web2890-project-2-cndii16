@@ -1,0 +1,204 @@
+@use '../custom' as *;
+
+.aboutme {
+  background-color: white;
+  img {
+    width: 50rem;
+    height: 100%;
+  }
+
+  .col-md-4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  i {
+    color: $tertiary;
+  }
+}
+
+$quote-fonts: "'Times New Roman', serif", "'Courier New', monospace", "'Arial', sans-serif";
+$quote-colors: #b39563, #8f7851, #ffb739, #b98833, #f99e00;
+$background-colors: #ffffff, #fffbf2, #eeeeee;
+
+$font-size-min: 20px;
+$font-size-max: 30px;
+
+@function random-index($array) {
+  $length: length($array);
+  @return random($length);
+}
+
+.quote {
+  background-color: white;
+  
+  position: relative;
+  text-align: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    color: $tertiary;
+  }
+
+  .quote-container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quote-text {
+    font-family: nth($quote-fonts, random-index($quote-fonts));
+    font-size: random($font-size-max - $font-size-min + 1) + $font-size-min;
+    color: nth($quote-colors, random-index($quote-colors));
+    background-color: nth($background-colors, random-index($background-colors));
+    padding: 30px 50px;
+    margin: 0 auto;
+    max-width: 80%;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+
+    &:hover {
+      transform: scale(1.05);
+      font-size: calc(20px + 2vw);
+      background-color: lighten(nth($background-colors, random-index($background-colors)), 10%);
+      color: darken(nth($quote-colors, random-index($quote-colors)), 20%);
+    }
+
+    animation: quoteAnimation 5s infinite alternate;
+
+    @keyframes quoteAnimation {
+      0% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      background: transparent;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-top: 20px solid transparent;
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+
+    &::before {
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 80px solid #ffb739; /* Choose your hexagon color */
+      border-top: 80px solid #ffb739;
+      position: absolute;
+      top: -80px;
+      left: -50px;
+      right: -50px;
+      bottom: -80px;
+      z-index: -1;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -2;
+    }
+
+    &:hover::before {
+      background-color: darken(nth($background-colors, random-index($background-colors)), 10%);
+      border-bottom: 80px solid darken(#ffb739, 10%);
+      border-top: 80px solid darken(#ffb739, 10%);
+    }
+  }
+}
+
+.recentshowing {
+  position: relative;
+  background-color: rgb(250, 249, 249);
+
+  i {
+    color: $tertiary;
+  }
+
+  .carousel-inner {
+    position: relative;
+  }
+
+  .carousel-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      position: static;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+
+      h5 {
+        color: $fourth;
+      }
+
+      p {
+        color: $secondary;
+      }
+    }
+  }
+
+  .carousel-item.active {
+    display: flex;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+
+  .carousel-control-prev {
+    left: 5%;
+  }
+
+  .carousel-control-next {
+    right: 5%;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(250, 196, 104, 0.9);
+    border-radius: 50%;
+    padding: 20px;
+    height: 60px;
+    width: 60px;
+  }
+}
